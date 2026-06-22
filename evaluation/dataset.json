@@ -1,0 +1,27 @@
+{
+  "normal": [
+    "Build CRM with login and contacts",
+    "Build inventory management system",
+    "Build school management app",
+    "Build hospital management software",
+    "Build ecommerce platform",
+    "Build employee portal",
+    "Build project tracking tool",
+    "Build booking application",
+    "Build finance dashboard",
+    "Build customer support system"
+  ],
+
+  "edge": [
+    "Build something",
+    "Create software",
+    "Need an app",
+    "Build CRM and not CRM",
+    "Everything should be public and private",
+    "Users can delete but not delete",
+    "School system",
+    "Make Uber without drivers",
+    "Build app for everyone",
+    ""
+  ]
+}
