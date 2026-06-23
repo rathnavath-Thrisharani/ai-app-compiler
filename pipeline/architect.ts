@@ -21,6 +21,26 @@ export function generateArchitecture(intent: any) {
     entities.push("subscriptions");
   }
 
+  // Ecommerce Support
+  if (
+    intent.appType === "ecommerce"
+  ) {
+    pages.push(
+      "products",
+      "cart",
+      "checkout",
+      "orders",
+      "admin"
+    );
+
+    entities.push(
+      "products",
+      "orders",
+      "payments",
+      "users"
+    );
+  }
+
   return {
     appType: intent.appType,
     pages,

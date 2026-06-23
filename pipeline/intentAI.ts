@@ -33,5 +33,38 @@ ${userPrompt}
     .replace(/```/g, "")
     .trim();
 
-  return JSON.parse(cleaned);
+  const intent =
+    JSON.parse(cleaned);
+
+  const promptLower =
+    userPrompt.toLowerCase();
+
+  // Ecommerce detection
+  if (
+    promptLower.includes("e-commerce") ||
+    promptLower.includes("ecommerce")
+  ) {
+    intent.appType = "ecommerce";
+  }
+
+  // Feature enrichment
+  if (
+    promptLower.includes("product")
+  ) {
+    intent.features.push("products");
+  }
+
+  if (
+    promptLower.includes("order")
+  ) {
+    intent.features.push("orders");
+  }
+
+  if (
+    promptLower.includes("admin")
+  ) {
+    intent.features.push("admin_panel");
+  }
+console.log("Gemini failed, using fallback");
+  return intent;
 }

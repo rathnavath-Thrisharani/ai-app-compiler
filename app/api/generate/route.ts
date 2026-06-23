@@ -37,8 +37,12 @@ try {
 
 console.log("After Normalize:", intent);
 
-} catch (error) {
-  console.log("Gemini failed, using fallback");
+}
+ catch (error) {
+   console.error(
+    "Gemini Error:",
+    error
+  );
 
   intent = extractIntent(prompt);
 }
