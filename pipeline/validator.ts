@@ -1,4 +1,5 @@
 import { AppSchema } from "@/schemas/appSchema";
+
 export function validateSchema(schema: any) {
   const errors: string[] = [];
 
