@@ -19,8 +19,39 @@ export function extractIntent(prompt: string) {
     features.push("analytics");
   }
 
-  if (lower.includes("payment")) {
+  if (
+    lower.includes("payment") ||
+    lower.includes("payments")
+  ) {
     features.push("payments");
+  }
+
+  // Calculator
+  if (
+    lower.includes("calculator")
+  ) {
+    features.push("calculator");
+  }
+
+  // Health
+  if (
+    lower.includes("health")
+  ) {
+    features.push("monitoring");
+  }
+
+  // School
+  if (
+    lower.includes("student")
+  ) {
+    features.push("students");
+  }
+
+  // Hospital
+  if (
+    lower.includes("patient")
+  ) {
+    features.push("patients");
   }
 
   const roles: string[] = [];
@@ -29,7 +60,21 @@ export function extractIntent(prompt: string) {
     roles.push("admin");
   }
 
-  roles.push("user");
+  if (
+    lower.includes("doctor")
+  ) {
+    roles.push("doctor");
+  }
+
+  if (
+    lower.includes("teacher")
+  ) {
+    roles.push("teacher");
+  }
+
+  if (roles.length === 0) {
+    roles.push("user");
+  }
 
   return {
     appType: detectAppType(lower),
@@ -39,11 +84,46 @@ export function extractIntent(prompt: string) {
 }
 
 function detectAppType(text: string) {
-  if (text.includes("crm")) return "crm";
+  if (text.includes("crm")) {
+    return "crm";
+  }
 
-  if (text.includes("school")) return "school";
+  if (
+    text.includes("ecommerce") ||
+    text.includes("e-commerce")
+  ) {
+    return "ecommerce";
+  }
 
-  if (text.includes("inventory")) return "inventory";
+  if (
+    text.includes("calculator")
+  ) {
+    return "calculator";
+  }
+
+  if (
+    text.includes("health")
+  ) {
+    return "health";
+  }
+
+  if (
+    text.includes("hospital")
+  ) {
+    return "hospital";
+  }
+
+  if (
+    text.includes("school")
+  ) {
+    return "school";
+  }
+
+  if (
+    text.includes("inventory")
+  ) {
+    return "inventory";
+  }
 
   return "generic";
 }

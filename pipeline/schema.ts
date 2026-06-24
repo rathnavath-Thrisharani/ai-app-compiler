@@ -26,7 +26,7 @@ export function generateSchema(architecture: any) {
     pages: architecture.pages.map(
       (page: string) => {
 
-        // LOGIN PAGE
+        // LOGIN
         if (page === "login") {
           return {
             name: page,
@@ -47,7 +47,7 @@ export function generateSchema(architecture: any) {
           };
         }
 
-        // CONTACTS PAGE
+        // CONTACTS
         if (page === "contacts") {
           return {
             name: page,
@@ -64,7 +64,7 @@ export function generateSchema(architecture: any) {
           };
         }
 
-        // DASHBOARD PAGE
+        // DASHBOARD
         if (page === "dashboard") {
           return {
             name: page,
@@ -85,7 +85,7 @@ export function generateSchema(architecture: any) {
           };
         }
 
-        // BILLING PAGE
+        // BILLING
         if (page === "billing") {
           return {
             name: page,
@@ -102,7 +102,7 @@ export function generateSchema(architecture: any) {
           };
         }
 
-        // ADMIN PAGE
+        // ADMIN
         if (page === "admin") {
           return {
             name: page,
@@ -127,7 +127,144 @@ export function generateSchema(architecture: any) {
           };
         }
 
-        // DEFAULT PAGE
+        // CALCULATOR
+        if (page === "calculator") {
+          return {
+            name: page,
+            components: [
+              {
+                type: "input",
+                label: "Number 1",
+              },
+              {
+                type: "input",
+                label: "Number 2",
+              },
+              {
+                type: "button",
+                label: "Calculate",
+              },
+            ],
+          };
+        }
+
+        // PRODUCTS
+        if (page === "products") {
+          return {
+            name: page,
+            components: [
+              {
+                type: "card",
+                label: "Product Catalog",
+              },
+              {
+                type: "button",
+                label: "Add Product",
+              },
+            ],
+          };
+        }
+
+        // ORDERS
+        if (page === "orders") {
+          return {
+            name: page,
+            components: [
+              {
+                type: "table",
+                label: "Orders",
+              },
+            ],
+          };
+        }
+
+        // PATIENTS
+        if (page === "patients") {
+          return {
+            name: page,
+            components: [
+              {
+                type: "table",
+                label: "Patients",
+              },
+              {
+                type: "button",
+                label: "Add Patient",
+              },
+            ],
+          };
+        }
+
+        // REPORTS
+        if (page === "reports") {
+          return {
+            name: page,
+            components: [
+              {
+                type: "chart",
+                label: "Health Reports",
+              },
+            ],
+          };
+        }
+
+        // STUDENTS
+        if (page === "students") {
+          return {
+            name: page,
+            components: [
+              {
+                type: "table",
+                label: "Students",
+              },
+              {
+                type: "button",
+                label: "Add Student",
+              },
+            ],
+          };
+        }
+
+        // TEACHERS
+        if (page === "teachers") {
+          return {
+            name: page,
+            components: [
+              {
+                type: "table",
+                label: "Teachers",
+              },
+            ],
+          };
+        }
+
+        // ATTENDANCE
+        if (page === "attendance") {
+          return {
+            name: page,
+            components: [
+              {
+                type: "table",
+                label: "Attendance",
+              },
+            ],
+          };
+        }
+
+        // APPOINTMENTS
+        if (page === "appointments") {
+          return {
+            name: page,
+            components: [
+              {
+                type: "table",
+                label: "Appointments",
+              },
+            ],
+          };
+        }
+
+        // DEFAULT
         return {
           name: page,
           components: [
